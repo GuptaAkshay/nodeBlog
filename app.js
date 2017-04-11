@@ -12,11 +12,12 @@ var multer = require('multer');
 var uploads = multer({ dest: './public/images/uploads' });
 var flash = require('connect-flash');
 
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
-
+app.locals.moment = require('moment');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -59,7 +60,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //handle connect flash
 app.use(flash());
 app.use(function (req, res, next) {
-	res.locals.message = require('express-messages')(req, res);
+	res.locals.messages = require('express-messages')(req, res);
 	next();
 });
 

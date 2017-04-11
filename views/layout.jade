@@ -6,15 +6,15 @@ html
 	body
 		.container
 			h1.logo Node Blog
-			nav
-				ul
-					li
-						a(href='/') Home
-					li
-						a(href='/posts/add') Add Post
-					li
-						a(href='/categories/add') Add Category
-			!= message()
+				nav
+					ul
+						li
+							a(href='/') Home
+						li
+							a(href='/posts/add') Add Post
+						li
+							a(href='/categories/add') Add Category
+			!= messages()
 			block content
 			footer
 				p Node Blog &copy; 2017
