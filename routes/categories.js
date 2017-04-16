@@ -29,7 +29,6 @@ router.get('/add', function(req, res, next) {
 router.post('/add', function(req, res, next) {
 	
 	var title       = req.body.title;
-	console.log("Title"+title);
 	
 	//form Validations
 	req.checkBody('title','Title field is required').notEmpty();

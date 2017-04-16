@@ -8,8 +8,8 @@ var db = require('monk')('localhost/nodeblog');
 router.get('/', function(req, res, next) {
   var db = req.db;
   var posts = db.get('posts');
-  console.log(posts[0]);
-  posts.find({},{},function(err, posts){
+  
+  posts.find({},{sort :{date : -1}},function(err, posts){
 	  res.render('index', {
   		'posts':posts
 	  })
