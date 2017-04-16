@@ -8,8 +8,7 @@ block content
 				a(href='post/show/#{post._id}')
 					=post.title
 			p.meta Posted in
-				a(href = '/categories/show/#{post.category}')  #{post.category}
-				by #{post.author} on #{moment(post.date).format('DD MMM YYYY')}
+				a(href = '/categories/show/#{post.category}')  #{post.category}				by #{post.author} on #{moment(post.date).format('DD MMM YYYY')}
 
 			img(src = '/images/uploads/#{post.mainimage}')
 			!=truncateText(post.body, 300)
